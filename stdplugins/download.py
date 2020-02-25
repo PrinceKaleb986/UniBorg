@@ -32,7 +32,7 @@ async def _(event):
                 reply_message,
                 Config.TMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, c_time, "I am trying to download")
                 )
             )
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -40,7 +40,7 @@ async def _(event):
         else:
             end = datetime.now()
             ms = (end - start).seconds
-            await mone.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
+            await mone.edit("I have downloaded the file to `{}` in {} seconds.".format(downloaded_file_name, ms))
     elif input_str:
         start = datetime.now()
         url = input_str
